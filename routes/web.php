@@ -28,6 +28,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/atraksi', function () {
+    return Inertia::render('Atraksi');
+})->middleware(['auth', 'verified'])->name('atraksi');
+Route::get('/homestay', function () {
+    return Inertia::render('Homestay');
+})->middleware(['auth', 'verified'])->name('homestay');
+Route::get('/katalog-ikan', function () {
+    return Inertia::render('KatalogIkan');
+})->middleware(['auth', 'verified'])->name('ikan');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
